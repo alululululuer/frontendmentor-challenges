@@ -18,8 +18,8 @@ Users should be able to:
 
 ### 🏡 Links
 
-- Solution URL: [Frontend Mentor Solution](https://your-solution-url.com)
-- Live Site URL: [Visit Online](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/product-preview-card-component-with-bem-vuwaFg100_)
+- Live Site URL: [Visit Online](https://luking-frontendmentor-challenges.netlify.app/product-preview-card-component/)
 
 ## 🚧 My process
 
