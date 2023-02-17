@@ -1,0 +1,61 @@
+/* CSS 重置样式  */
+/* 1. 更直观的盒模型 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. 移除默认margin */
+* {
+  margin: 0;
+}
+
+/* 3. 高度基于百分比 */
+html,
+body {
+  height: 100%;
+}
+
+/* 4. 调整行高 */
+/* 以字体大小为基数 并为每一行提供固定大小的空间 */
+* {
+  line-height: calc(1em + 0.5rem);
+}
+
+/* 5. font-smooting */
+/* 使字体易于阅读 */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Sensible media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block; /* 避开inline magic space etc. */
+  max-width: 100%; /* 防止超出包含块 */
+}
+
+/* 7. Inherit fonts for form controls */
+/* 表单默认有自己单独的样式 不继承字体样式 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Word wrapping */
+/* 英文中换行的条件是空格或连字符 否则是不换行的；空间不够的话会导致文本溢出 */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
