@@ -17,7 +17,7 @@ Users should be able to:
 
 ### 🏡 Link
 
-- Live Site URL: [Visit Online](https://luking-frontendmentor-challenges.netlify.app/order-summary-card-component/)
+- Live Site URL: [Visit Online](https://luking-frontendmentor-challenges.netlify.app/order-summary-component/)
 
 ## 🚧 My process
 
