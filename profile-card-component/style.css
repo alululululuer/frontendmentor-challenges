@@ -1,0 +1,141 @@
+:root {
+  --clr-primary: hsl(185, 75%, 39%);
+
+  --clr-secondary-400: hsl(227, 10%, 46%);
+  --clr-secondary-500: hsl(229, 23%, 23%);
+
+  --clr-neutral: hsl(0, 0%, 59%);
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* reset css */
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font: inherit;
+}
+
+/* general styles */
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: var(--fw-regular);
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral);
+  display: grid;
+  place-content: center;
+}
+
+/* body bg styles */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  background-image: url(./images/bg-pattern-top.svg);
+  background-position: right bottom;
+  transform: translate(-50%, -50%);
+}
+
+body::after {
+  background-image: url(./images/bg-pattern-bottom.svg);
+  background-position: left top;
+  transform: translate(50%, 50%);
+}
+
+/* utilities */
+.flex-group {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.divide {
+  height: 1px;
+  background-color: var(--clr-neutral);
+}
+
+/* card styles */
+.card {
+  --img-height: 140px;
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+  --profile-img-size: 96px;
+
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card__img {
+  height: var(--img-height);
+  background-image: url(./images/bg-pattern-card.svg);
+}
+
+.card__content {
+  position: relative;
+  padding: var(--content-padding);
+  display: grid;
+  gap: var(--content-spacing);
+  padding-top: calc(var(--profile-img-size) / 2);
+}
+
+.profile__img {
+  width: var(--profile-img-size);
+  height: var(--profile-img-size);
+  border: 5px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile__name,
+.profile__stat div:nth-child(1) {
+  font-weight: var(--fw-bold);
+  font-size: 18px;
+  color: var(--clr-secondary-500);
+}
+
+/* attribution styles */
+.attribution {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 11px;
+  color: black;
+}
+
+.attribution a {
+  color: white;
+}
