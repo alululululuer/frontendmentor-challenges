@@ -1,0 +1,174 @@
+:root {
+  --clr-primary-400: hsl(184, 100%, 22%);
+  --clr-primary-500: hsl(179, 100%, 13%);
+  --clr-secondary: hsl(31, 77%, 52%);
+
+  --clr-neutral-400: hsl(0, 0%, 95%);
+  --clr-neutral-500: hsla(0, 0%, 100%, 0.75);
+
+  --ff-base: "Lexend Deca", sans-serif;
+  --ff-accent: "Big Shoulders Display", cursive;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* reset css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+p,
+h1,
+h2 {
+  overflow-wrap: break-word;
+}
+
+/* general styles */
+body {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-500);
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+
+  font-size: 15px;
+  font-weight: var(--fw-regular);
+}
+
+/* utilities */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.button {
+  padding: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  border: solid 2px var(--clr-neutral-400);
+  max-width: 10rem;
+  background-color: var(--clr-neutral-400);
+}
+
+/* cards styles */
+.cards {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: grid;
+  max-width: 1000px;
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* card styles */
+.card {
+  --content-padding: 3rem;
+  --content-spacing: 1rem;
+  --button-margin-top: 2rem;
+
+  padding: var(--content-padding);
+  display: grid;
+  gap: var(--content-spacing);
+  max-width: 450px;
+}
+
+@media (min-width: 1200px) {
+  .card {
+    --button-margin-top: 4rem;
+  }
+}
+
+.card__title {
+  color: var(--clr-neutral-400);
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.card-1 {
+  background-color: var(--clr-secondary);
+}
+
+.card-1 .card__btn {
+  color: var(--clr-secondary);
+}
+
+.card-1 .card__btn:is(:hover, :focus) {
+  background-color: var(--clr-secondary);
+  color: var(--clr-neutral-400);
+}
+
+.card-2 {
+  background-color: var(--clr-primary-400);
+}
+
+.card-2 .card__btn {
+  color: var(--clr-primary-400);
+}
+
+.card-2 .card__btn:is(:hover, :focus) {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-400);
+}
+
+.card-3 {
+  background-color: var(--clr-primary-500);
+}
+
+.card-3 .card__btn {
+  color: var(--clr-primary-500);
+}
+
+.card-3 .card__btn:is(:hover, :focus) {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-400);
+}
+
+.card__btn {
+  margin-top: var(--button-margin-top);
+}
+
+/* attribution styles */
+.attribution {
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--clr-primary-400);
+}
+
+.attribution a {
+  color: var(--clr-secondary);
+}
