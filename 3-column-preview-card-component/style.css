@@ -110,12 +110,20 @@ body {
   .card {
     --button-margin-top: 4rem;
   }
+
+  .card p {
+    /* 给一个相同的高度方便grid track 对齐 */
+    height: 130px;
+  }
 }
 
 .card__title {
   color: var(--clr-neutral-400);
   margin: 1rem 0;
   font-size: 2rem;
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
 }
 
 .card-1 {
