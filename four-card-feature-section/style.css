@@ -73,10 +73,12 @@ main {
 
 /* text-box styles */
 .text-box {
+  --mb: 2rem;
+
   max-width: 500px;
   text-align: center;
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--mb);
 }
 
 h1 {
@@ -87,6 +89,10 @@ h1 {
 }
 
 @media (min-width: 1200px) {
+  .text-box {
+    --mb: 5rem;
+  }
+
   h1 {
     font-size: 2rem;
   }
@@ -112,15 +118,15 @@ h1 span {
   position: relative;
   height: var(--card-height);
   max-width: var(--card-width);
-  border-top: 0.5rem solid;
+  border-top: 5px solid;
 }
 
 .card:nth-child(1) {
-  border-color: var(--clr-primary-1);
+  border-color: var(--clr-primary-2);
 }
 
 .card:nth-child(2) {
-  border-color: var(--clr-primary-2);
+  border-color: var(--clr-primary-1);
 }
 
 .card:nth-child(3) {
