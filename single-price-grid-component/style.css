@@ -117,7 +117,7 @@ button {
   --part-padding: 1.5rem;
   --part-spacing: 1rem;
 
-  max-width: 53rem;
+  max-width: 45rem;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
   overflow: hidden;
