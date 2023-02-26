@@ -1,0 +1,247 @@
+:root {
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(210, 46%, 95%);
+  --clr-neutral-600: hsl(212, 23%, 69%);
+  --clr-neutral-700: hsl(214, 17%, 51%);
+  --clr-neutral-800: hsl(217, 19%, 35%);
+
+  --ff-base: "Manrope", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* reset css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* general styles */
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 13px;
+  color: var(--clr-neutral-700);
+  background-color: var(--clr-neutral-500);
+
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  place-items: center;
+
+  margin: 0 1rem;
+}
+
+/* utilities */
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+/* article styles */
+.article {
+  --width: 50rem;
+  --img-size: 13rem;
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+  --share-icon: 2rem;
+
+  max-width: 45.5625rem;
+  background-color: var(--clr-neutral-400);
+  box-shadow: 0 1px 5px var(--clr-neutral-600);
+  border-radius: 1rem;
+  position: relative;
+
+  display: grid;
+}
+
+.article__img {
+  min-height: var(--img-size);
+  background-image: url(./images/drawers.jpg);
+  background-size: cover;
+  border-radius: 1rem 0 0 1rem;
+  overflow: hidden;
+}
+
+.article__content {
+  display: grid;
+  gap: var(--content-spacing);
+  padding: var(--content-padding);
+}
+
+.article__title {
+  line-height: 1.3;
+  font-weight: var(--fw-bold);
+  font-size: 1.125rem;
+  color: var(--clr-neutral-800);
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.article__info {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  gap: calc(var(--content-spacing) / 2);
+}
+
+.author-name {
+  color: var(--clr-neutral-800);
+  font-weight: var(--fw-bold);
+}
+
+.article__share {
+  position: relative;
+}
+
+div[class*="share-tooltip"] p {
+  color: var(--clr-neutral-600);
+  letter-spacing: 3px;
+}
+
+.mobile-share-tooltip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--clr-neutral-800);
+  padding: var(--content-padding);
+
+  /* on mobile unshare state as default */
+  display: none;
+}
+
+.desktop-share-tooltip {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15.625rem;
+  height: 3rem;
+  background-color: var(--clr-neutral-800);
+  border-radius: 0.5rem;
+  padding: 0 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  /* on mobile unshare state as default */
+  display: none;
+}
+
+/* on mobile article's share state */
+.share .mobile-share-tooltip {
+  display: flex;
+}
+
+.desktop-share-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: inherit;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+.social-link {
+  color: var(--clr-neutral-400);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.share-btn {
+  border: none;
+  border-radius: 50%;
+  width: var(--share-icon);
+  height: var(--share-icon);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--clr-neutral-700);
+  background-color: var(--clr-neutral-500);
+}
+
+.share-btn--mobile {
+  background-color: var(--clr-neutral-700);
+  color: var(--clr-neutral-400);
+}
+
+/* attritubtion styles */
+.attribution {
+  font-size: 11px;
+  padding: 1rem 0;
+}
+
+.attribution a {
+  color: var(--clr-neutral-800);
+}
+
+/* for the desktop */
+@media (min-width: 900px) {
+  .article {
+    --img-size: 17.75rem;
+    --content-padding: 2.375rem;
+    --share-icon: 2.5rem;
+
+    grid-template-columns: var(--img-size) 1fr;
+  }
+
+  /* on desktop .mobile-share-tooltip should aways display none */
+  article.article .mobile-share-tooltip {
+    display: none;
+  }
+
+  /* on desktop article's share state */
+  .share .desktop-share-tooltip {
+    display: flex;
+  }
+}
