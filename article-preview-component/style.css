@@ -210,7 +210,8 @@ div[class*="share-tooltip"] p {
   background-color: var(--clr-neutral-500);
 }
 
-.share-btn--mobile {
+.share-btn:hover,
+.share .share-btn {
   background-color: var(--clr-neutral-700);
   color: var(--clr-neutral-400);
 }

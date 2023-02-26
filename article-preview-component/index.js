@@ -1,6 +1,8 @@
-const shareButton = document.getElementById("share-btn");
+const shareButtons = document.querySelectorAll(".share-btn");
 const articleElement = document.querySelector(".article");
 
-shareButton.addEventListener("click", () => {
-  articleElement.classList.toggle("share");
+shareButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    articleElement.classList.toggle("share");
+  });
 });
