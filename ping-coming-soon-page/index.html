@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/abd9595bd7.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="visually-hidden">Ping.</h1>
+      <img src="./images/logo.svg" alt="Logo" />
+    </header>
+    <main>
+      <div class="text-box">
+        <p>We are launching <span>soon!</span></p>
+        <p>Subscribe and get notified</p>
+      </div>
+      <form class="input-box">
+        <div class="form-control">
+          <label for="email" class="visually-hidden">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,4}$"
+            placeholder="Your email address..."
+            required
+          />
+          <p class="error-msg">Please provide a valid email address</p>
+        </div>
+        <button id="btn">Notify Me</button>
+      </form>
+      <div class="img-box">
+        <img src="./images/illustration-dashboard.png" alt="Dashboard image" />
+      </div>
+      <div class="social-links">
+        <a class="link" href="https://www.facebook.com/"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a class="link" href="https://twitter.com/"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a class="link" href="https://www.instagram.com/"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+      </div>
+    </main>
+
+    <footer>
+      <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/alululululuer" target="_blank">luking</a>.
+      </p>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>

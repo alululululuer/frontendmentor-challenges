@@ -1,0 +1,263 @@
+:root {
+  --clr-primary: hsl(223, 87%, 63%);
+
+  --clr-secondary-blue: hsl(223, 100%, 88%);
+  --clr-invalid: hsl(354, 100%, 66%);
+  --clr-valid: hsl(145, 64%, 49%);
+
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(0, 0%, 59%);
+  --clr-neutral-600: hsl(209, 33%, 12%);
+
+  --ff-base: "Libre Franklin", sans-serif;
+
+  --fw-thin: 300;
+  --fw-semi: 600;
+  --fw-bold: 700;
+
+  --sp-base: 1rem;
+}
+
+/* reset css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* general styles */
+body {
+  display: grid;
+  place-items: center;
+  grid-template-rows: min-content 1fr min-content;
+  gap: var(--sp-base);
+
+  font-family: var(--ff-base);
+  font-weight: var(--fw-thin);
+  font-size: 1rem;
+  color: var(--clr-neutral-500);
+}
+
+header {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 2rem;
+
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr min-content;
+  gap: calc(var(--sp-base) * 2);
+}
+
+/* hiding content visually */
+/* ie9+ */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* text-box styles */
+.text-box {
+  text-align: center;
+}
+
+.text-box p:first-child {
+  font-size: 1.563rem;
+  margin-bottom: var(--sp-base);
+}
+
+.text-box span {
+  color: var(--clr-neutral-600);
+  font-weight: var(--fw-bold);
+}
+
+.text-box p:last-child {
+  color: var(--clr-neutral-600);
+}
+
+/* input-box styles */
+.input-box {
+  display: grid;
+  align-items: center;
+  gap: var(--sp-base);
+}
+
+.form-control {
+  display: grid;
+}
+
+/* amazing👀 */
+/* :has() not work on firefox😭 */
+/* .form-control:has(:focus-visible:invalid)::after, */
+/* use p for error-msg instead because there are two msg text */
+
+/* .form-control.invalid::after {
+  content: "Please provide a vailid email address.";
+  display: block;
+  margin-top: var(--sp-base);
+  justify-self: center;
+  font-size: 0.8rem;
+  color: var(--clr-invalid);
+} */
+.form-control p {
+  display: none;
+}
+
+.form-control.invalid p {
+  display: block;
+  margin-top: var(--sp-base);
+  justify-self: center;
+  font-size: 0.8rem;
+  color: var(--clr-invalid);
+}
+
+#email {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  border: solid 1px var(--clr-secondary-blue);
+}
+
+/* amazing👀 */
+/* #email:invalid  */
+
+.form-control.invalid #email,
+#email:focus-visible:invalid {
+  outline-color: var(--clr-invalid);
+  border-color: var(--clr-invalid);
+}
+
+/* amazing👀 */
+/* #email:valid */
+
+.form-control.valid #email {
+  outline-color: var(--clr-valid);
+  border-color: var(--clr-valid);
+}
+
+button {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border: solid 1px var(--clr-secondary-blue);
+  border-radius: 999px;
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-semi);
+  cursor: pointer;
+  box-shadow: 0 1px 5px 2px var(--clr-secondary-blue);
+  transition: all 0.1s;
+}
+
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 1px 8px 2px var(--clr-secondary-blue);
+}
+
+/* img-box styles */
+.img-box {
+  align-self: center;
+  padding-top: calc(var(--sp-base) * 2);
+  padding-bottom: calc(var(--sp-base) * 5);
+}
+
+/* social links styles */
+.social-links {
+  justify-self: center;
+
+  display: flex;
+  gap: var(--sp-base);
+}
+
+.link {
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: solid 1px var(--clr-secondary-blue);
+  color: var(--clr-primary);
+  font-size: 1rem;
+}
+
+.link:hover {
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-400);
+}
+
+/* footer styles */
+.attribution {
+  font-size: 11px;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--clr-primary);
+  font-weight: var(--fw-semi);
+}
+
+/* for desktop */
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.25rem;
+  }
+  .text-box p:first-child {
+    font-size: 3.052rem;
+  }
+  .input-box {
+    grid-template-columns: 2fr 1fr;
+  }
+  .form-control {
+    display: block;
+    position: relative;
+  }
+  .form-control.invalid p {
+    position: absolute;
+    padding-left: 2rem;
+  }
+}
