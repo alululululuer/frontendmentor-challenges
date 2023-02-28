@@ -1,0 +1,249 @@
+:root {
+  --clr-primary-red: hsl(0, 100%, 74%);
+  --clr-primary-green: hsl(154, 59%, 51%);
+
+  --clr-accent-blue: hsl(248, 32%, 49%);
+
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-500: hsl(246, 25%, 77%);
+  --clr-neutral-600: hsl(249, 10%, 26%);
+
+  --clr-bt: #db676a;
+
+  --ff-base: "Poppins", sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+  --fw-bold: 700;
+
+  --radius: 0.5rem;
+}
+
+/* reset css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* general styles */
+body {
+  background-image: url(./images/bg-intro-desktop.png);
+  background-color: var(--clr-primary-red);
+  color: var(--clr-neutral-400);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  place-items: center;
+
+  margin: 0 1rem;
+}
+
+/* hiding content visually */
+/* ie9+ */
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  font-size: 1.563rem;
+  line-height: 1.1;
+}
+
+.two-cols {
+  --spacing: 1.5rem;
+
+  display: grid;
+  gap: var(--spacing);
+  align-items: center;
+}
+
+.col-1 {
+  --text-align: center;
+
+  display: grid;
+  gap: var(--spacing);
+  text-align: var(--text-align);
+
+  margin-top: 5rem;
+  padding: 0 3%;
+}
+
+.col-2 {
+  display: grid;
+  gap: calc(var(--spacing) / 2);
+}
+
+.col-2 p:first-child {
+  background-color: var(--clr-accent-blue);
+  padding: 1rem;
+  text-align: center;
+  border-radius: var(--radius);
+  border-bottom: solid 0.5rem var(--clr-bt);
+}
+
+.form {
+  --padding: 1.5rem;
+
+  display: grid;
+  gap: calc(var(--spacing) / 2);
+  background-color: var(--clr-neutral-400);
+  padding: var(--padding);
+  border-radius: var(--radius);
+  border-bottom: solid 0.5rem var(--clr-bt);
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control input {
+  width: 100%;
+  border: solid 1px var(--clr-neutral-500);
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+  color: var(--clr-neutral-600);
+  font-weight: var(--fw-semi);
+}
+
+.form-control input::placeholder {
+  font-weight: var(--fw-semi);
+  opacity: 0.8;
+}
+
+/* handle invalid state */
+.form-control.invalid input {
+  border-color: var(--clr-primary-red);
+  outline-color: var(--clr-primary-red);
+}
+
+.form-control.invalid::after {
+  content: "";
+  background-image: url(./images/icon-error.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 2rem;
+  top: 1rem;
+}
+
+.error-msg {
+  display: none;
+  padding: 0.5rem;
+  text-align: right;
+  font-style: italic;
+  font-weight: var(--fw-medium);
+  color: var(--clr-primary-red);
+}
+
+.form-control.invalid .error-msg {
+  display: block;
+}
+
+.button {
+  padding: 1rem;
+  border-radius: var(--radius);
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-primary-green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-semi);
+  border: none;
+  cursor: pointer;
+}
+
+.button:is(:hover, :active) {
+  opacity: 0.8;
+}
+
+.intro {
+  color: var(--clr-neutral-500);
+  font-size: 0.707rem;
+  text-align: center;
+}
+
+.intro span {
+  color: var(--clr-primary-red);
+  font-weight: var(--fw-medium);
+}
+
+/* attribution styles */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.attribution a {
+  color: var(--clr-primary-green);
+  font-weight: var(--fw-semi);
+}
+
+/* for the desktop */
+@media (min-width: 1200px) {
+  body {
+    padding: 0 10%;
+  }
+  h1 {
+    font-size: 3.052rem;
+  }
+  .two-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .col-1 {
+    --text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+  .col-2 {
+    margin-top: 2rem;
+  }
+  .form {
+    --padding: 2rem;
+  }
+}
