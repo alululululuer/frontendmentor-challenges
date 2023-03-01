@@ -188,6 +188,11 @@ h1 span {
 
 /* for the desktop */
 @media (min-width: 1200px) {
+  body {
+    background-image: url(./images/bg-pattern-desktop.svg), var(--gradient-1);
+    background-position-x: right 610px;
+    background-repeat: no-repeat;
+  }
   main.container {
     height: 100%;
     grid-template-columns: 1fr 610px;
